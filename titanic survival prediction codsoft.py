@@ -8,9 +8,10 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+import os
 
-
-df = pd.read_csv("C:/Users/Pranali/OneDrive/Desktop/Titanic_Project/Titanic-Dataset.csv")
+file_path = os.path.join(os.path.dirname(__file__), "Titanic-Dataset.csv")
+df = pd.read_csv(file_path)
 
 print("Dataset Shape:")
 print(df.shape)
