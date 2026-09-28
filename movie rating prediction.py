@@ -8,10 +8,9 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import os
 
-
-file_path = r"C:/Users/Pranali/OneDrive/Desktop/movie prediction task 2/archive (3)/IMDb Movies India.csv"
-
+file_path = os.path.join(os.path.dirname(__file__), "IMDb Movies India.csv")
 df = pd.read_csv(file_path, encoding='latin1')
 
 print("Dataset loaded successfully!")
@@ -58,8 +57,7 @@ df = df.dropna(subset=['Rating'])
 
 print("\nRows after removing movies without Rating:")
 print(df.shape)
-========================================================
-
+#========================================================
 # Numerical columns
 df['Year'] = df['Year'].fillna(df['Year'].median())
 df['Duration'] = df['Duration'].fillna(df['Duration'].median())
