@@ -2,8 +2,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt 
 import sklearn as skl
+import os
 
-df= pd.read_csv("C:/Users/Pranali/OneDrive/Desktop/TASK 3/archive (3)/IRIS.csv")
+file_path = os.path.join(os.path.dirname(__file__), "IRIS.csv")
+df = pd.read_csv(file_path)
+
 print(df.head())
 print(df.columns.tolist())
 print(df.info())
